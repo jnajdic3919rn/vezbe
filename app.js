@@ -14,7 +14,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'http://http://vezbe131.herokuapp.com',
+        origin: '*',
         methods: ['GET', 'POST'],
         credentials: true
     },
@@ -22,7 +22,7 @@ const io = new Server(server, {
 });
 
 var corsOptions = {
-    origin: 'http://http://vezbe131.herokuapp.com',
+    origin: '*',
     optionsSuccessStatus: 200
 }
 
