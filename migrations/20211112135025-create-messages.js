@@ -8,15 +8,27 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER
       },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       body: {
         type: DataTypes.STRING(2048),
         allowNull: false
       },
-      userId: {
-        type: DataTypes.INTEGER,
+      auto: {
+        type: DataTypes.BOOLEAN,
         allowNull: false
       },
-      artId: {
+      sender: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      userId: {
         type: DataTypes.INTEGER,
         allowNull: false
       },

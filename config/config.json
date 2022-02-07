@@ -1,11 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "vezbeDB",
+    "password": null,
+    "database": "vue",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "logging": false
+    "dialect": "mariadb",
+    "logging": false,
+    "port": "3306"
   },
   "test": {
     "username": "root",
@@ -15,19 +16,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "neqjfqjbsoztsv",
-    "password": "2e7a3113c2311f34ba9666a414acf2aac072637ee8d3575501606c1d882f5710",
-    "database": "dahnfn7j8qq7q5",
-    "host": "ec2-34-255-225-151.eu-west-1.compute.amazonaws.com",
-    "port": 5432,
-    "dialect": "postgres",
-    "logging": false,
-    "sll": true,
-    "dialectOptions": {
-      "ssl": {
-        "require": true,
-        "rejectUnauthorized": false
-      }
-    }
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }

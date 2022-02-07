@@ -22,6 +22,11 @@ module.exports = {
         allowNull: false,
         defaultValue: false
       },
+      moderator: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -31,6 +36,10 @@ module.exports = {
             msg: "Nije email"
           }
         }
+      },
+      lastLogged: {
+        type: DataTypes.DATE,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

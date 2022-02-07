@@ -1,6 +1,10 @@
 const express = require('express');
-const { sequelize, Users, Messages } = require('./models');
-const msgs = require('./routes/messages');
+const { sequelize, Users, Messages, Categories, RequestsEx, Paintings } = require('./models');
+const users = require('./routes/usersRoutes');
+const msgs = require('./routes/messagesRoutes');
+const categories = require('./routes/categoriesRoutes');
+const paintings = require('./routes/paintingsRoutes');
+const requests = require('./routes/requestsRoutes');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
@@ -29,7 +33,11 @@ var corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 
-app.use('/api', msgs);
+app.use('/api/users', users);
+app.use('/api/messages', msgs);
+app.use('/api/categories', categories);
+app.use('/api/requests', requests);
+app.use('/api/paintings', paintings);
 
 app.post('/api_register', (req, res) => {
 
@@ -37,6 +45,7 @@ app.post('/api_register', (req, res) => {
         name: req.body.name,
         email: req.body.email,
         admin: req.body.admin,
+        moderator: false,
         password: bcrypt.hashSync(req.body.password, 10)
     };
 
@@ -112,6 +121,6 @@ app.use(history({ index: '/index.html' }));
 
 app.use(staticMdl);
 
-server.listen({ port: process.env.PORT || 8000 }, async () => {
+server.listen({ port: 8090 }, async () => {
     await sequelize.authenticate();
 });
